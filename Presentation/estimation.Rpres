@@ -1,0 +1,220 @@
+Gamifying Agile Estimation
+========================================================
+# YAML Header
+title: "Estimation and Planning Poker"
+author: Andrew Sears, Senior Solutions Consultant, T4G Limited
+date: February 27, 2016
+autosize: true
+
+width: 1024
+height: 768
+font-import: http://fonts.googleapis.com/css?family=Risque
+font-family: 'Helvetica'
+
+```{r setup, include=FALSE}
+library(knitr)
+opts_chunk$set(cache=TRUE, collapse=TRUE, error=FALSE, prompt=TRUE)
+# This sets the chunk display theme
+thm <- knit_theme$get("acid")
+knit_theme$set(thm)
+# This sets some display options
+options(digits=3)
+options(width=80)
+install.packages("UsingR")
+install.packages("numbers")
+
+```
+A few of my agile influences
+========================================================
+
+Gino Marckx, Agile Trainer, started doing agile in 2002
+![Gino](https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/5/005/020/2a0/1787607.jpg)
+
+*"I have trained over 1,000 teams, and only 2 have succeeded in the marshmallow challenge."*  
+
+*"Agile is just common sense."*
+
+
+Ken Schwaber, co-creator of Scrum in 1995  
+![Ken](http://www.azquotes.com/picture-quotes/quote-scrum-is-like-your-mother-in-law-it-points-out-all-your-faults-ken-schwaber-142-83-07.jpg)
+***
+Michael Sahota, founder, Toronto Agile Software Development Community  
+![Michael](http://www.torontoagilecommunity.org/download/attachments/13107247/2014%20Michael%20Profile-300pix.JPG?version=1&modificationDate=1412890237293&api=v2&effects=border-simple,blur-border)
+
+*"All of us need to work together to support you getting what you want."*
+
+
+Dr. Jeff Sutherland, co-creator of Scrum in 1995  
+![Jeff](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Jeff_Sutherland.JPG/200px-Jeff_Sutherland.JPG)
+
+*"Embrace the unknown! That's where learning lies! If you're too afraid to learn, you will never get any better."*
+
+
+What's a Backlog?
+========================================================
+type: prompt
+incremental: true
+
+* Work to be completed, what will be delivered
+* An ordered, prioritized list of product backlog items (PBIs)
+* Most valuable *customer* items will be on top
+
+
+What's a Product Backlog Item?
+========================================================
+type: alert
+incremental: true
+
+* Ordered list of work that delivers value to a product
+* Lives under a Feature that lives under an Epic
+* Tells a preferably small story about a feature
+* Contains child tasks and sometimes bugs 
+
+
+Estimation Exercises
+========================================================
+* Estimate Product Backlog Items (PBIs)
+** Remember, these are estimates
+** Story Point 
+** Entire team estimates each PBI
+
+* Use Planning Poker
+** Reduces outside influences on estimates
+
+
+Fibonacci Sequence
+========================================================
+The Fibonacci Sequence is the series of numbers:
+
+1, 1, 2, 3, 5, 8, 13, 21, 34, .
+
+The next number is found by adding up the two numbers before it.
+
+The 2 is found by adding the two numbers before it (1+1). Similarly, the 3 is found by adding the two numbers before it (1+2).
+
+[Spiral Graph Creation](https://rpubs.com/hchan88888/99118)
+
+Fibonacci Sequence
+========================================================
+```{r}
+library(UsingR)
+library(numbers)
+n<-20
+s <- seq(1:n)
+fib <- as.integer(sapply(s, fibonacci))  
+x1<- ifelse(seq(1:n)%%2 ==1, fib, 0)
+y1<- ifelse(seq(1:n)%%2 ==0, fib, 0)
+x2 <-ifelse(seq(1:n)%%4==1, x1,-x1)
+y2 <-ifelse(seq(1:n)%%4==2, y1,-y1)
+x <- ifelse(x2 >0, log(x2), ifelse(x2<0, -log(-x2),0))
+y <- ifelse(y2 >0, log(y2), ifelse(y2<0, -log(-y2),0))
+plot(x,y)
+lines(x,y, col="red")  
+```
+
+
+Estimating Effort
+========================================================
+
+* Shirt Sizes
+    + 1-XS, 3-S, 8-M, 20-L, 40-XL, 100-XXL
+
+* Fibonacci Extended 
+    + 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144
+
+* **Fibonacci Original**
+    + 1, 2, 3, 5, 8, 13, 20, 40, 100  
+*Recommended by Ken Schwaber, father of scrum*
+
+* **Doubling**
+    + 1, 2, 4, 8, 16, 32, 64  
+*Recommended for Business Value Estimation*
+
+* Thrown  
+    + 1, 2, 3, 4, 5
+
+![Coffee](https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRqUm3mvrF3uDIzZRJ338FKs4iG-8sbatxJA91RFuDNfuEWbv43kqoOsgI)  <large>&infin; </large>
+
+![shirts](http://agileupgrade.com/wp-content/uploads/2015/02/T-shirt-size-point-ratio.png)
+
+Estimating Business Value
+========================================================
+* Product Owner estimates Business Value
+
+* Use Doubling  
+    + 1, 2, 4, 8, 16, 32, 64
+
+* Prioritize The Backlog by ROI    
+
+*$ROI  = \frac{Business Value}{Effort}$*
+
+
+
+
+Gamifying Estimates with Planning Poker
+========================================================
+1. Create an Estimation Session
+2. Choose an Iteration
+3. Share the link
+4. Leader picks a PBI
+5. Team discusses PBI, ensures completeness
+    + Description  
+    + Acceptance Criteria  
+    + Enough information to task it out  
+
+6. Everyone submit their estimates at the same time
+    + Reduce influences on estimates
+7. Review the estimates  
+    + Elaborate items if estimates differ greatly  
+    + Discuss and learn other team members activities
+    + Identify potential blockers
+9. Commit consensus estimate
+***
+![Keep Calm and Carry On](http://eskipaper.com/images/keep-calm-and-carry-on-9.jpg)
+
+
+Cleaning up Product Backlog Items
+========================================================
+
+* Don't overthink estimates
+
+* Elaborate on detail and acceptance criteria
+
+* Split Smelly, Stenchy PBIs into smaller PBIs
+
+* Task out PBIs
+
+
+Gamification Techniques
+========================================================
+LEGO(r) SERIOUS PLAY(r)
+https://www.lego.com/en-us/seriousplay 
+
+
+Other RMarkdown Presentation Tools
+========================================================
+
+* revealjs
+* ioslides
+* slidy
+* beamer
+***
+```
+library(devtools)
+install_github('slidify','ramnathv')
+install_github('slidifyLibraries','ramnathv') 
+library('slidify')
+author('slidifyDemo')
+```
+
+Resources
+========================================================
+[RStudio Cheat Sheets](https://www.rstudio.com/resources/cheatsheets/)
+
+[SSW - Do you estimate all tasks at the start of the sprint?](https://rules.ssw.com.au/do-you-estimate-all-tasks-at-the-start-of-the-sprint)
+
+[SSW - Do you know how to size user stories effectively?](https://rules.ssw.com.au/estimating-do-you-know-how-to-size-user-stories-effectively)
+
+[SSW - Do you estimate business value?](https://rules.ssw.com.au/do-you-estimate-business-value)
+[Authoring R Presentations](https://support.rstudio.com/hc/en-us/articles/200486468-Authoring-R-Presentations)
+
