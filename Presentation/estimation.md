@@ -15,9 +15,9 @@ Gino Marckx, Agile Trainer, started doing agile in 2002
 
 ![Gino](https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/5/005/020/2a0/1787607.jpg)
 
-*"I have trained over 1,000 teams, and only 2 have succeeded in the [marshmallow challenge](http://www.tomwujec.com/design-projects/marshmallow-challenge/)."*  
+*"I have facilitated collaborative origami for over 1,000 pairs and only 2 have succeeded in completing it back to back."*  
 
-*"Agile is just common sense."*
+*"Agile is just common sense brought back to software engineering."*
 
 ***
 Michael Sahota, founder, Toronto Agile Software Development Community  
