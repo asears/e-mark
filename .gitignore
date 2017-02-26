@@ -1,3 +1,4 @@
+*.rds
 *sigs_000*
 #Presentation Cache files
 *-cache/

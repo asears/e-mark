@@ -1,3 +1,5 @@
+#todo - clean this up with pacman
+
 library("rvest")
 library(stringr)
 library(data.table)
@@ -8,61 +10,29 @@ library(data.table)
 #install.packages("wordcloud") # word-cloud generator 
 #install.packages("RColorBrewer") # color palettes
 #install.packages("htmltab")
+#install.packages("RWeka")
+
 # Load text analytics libraries
 library("tm")
 library("SnowballC")
 library("wordcloud")
 library("RColorBrewer")
+library("RWeka")
+
 library(htmltab)
 
-# define base path
-uri <- c("http://agilemanifesto.org/display/")
-#000000001
-#00000001
-#http://agilemanifesto.org/display/000000111.html
-#uri
+library("ggplot2")
 
 # set working folder
 this.dir <- dirname(parent.frame(2)$ofile)
 setwd(this.dir)
 
-readpage <- function (i) {
-  i <- str_pad(i, 9, pad = "0")
-  url <- paste('../data/sigs_',i,".html", sep="")
-  
-  print(url)
-  
-  #sigs <- htmltab(doc = url, which = "//caption[starts-with(text() = 'Signatures')]/ancestor::table")
-  #head(sigs)
-  
-  sigs <- url %>%
-    read_html() %>%
-    html_nodes("table") %>%
-    .[[3]] %>%
-    html_table(fill = TRUE, header=TRUE)
-  
-  #sigs <- sigs[[1]]
-  #sigs <- sigs[[1]]
-  return(sigs)
-}
+# load file previously created by DownloadSigs.R and ConvertSigs.R
 
-# number of signatory pages to read
-pages <- 2:2
+df <- readRDS("../data/sigs.rds")
 
-
-
-for (i in 1:1)
-{
-  dftmp = readpage(i)
-}
-
-for (i in pages)
-{
-  df = readpage(i)
-  merge(df,dftmp)
-}
-
-
+# keep only the text1, text2, text3 (drop dates, filename)
+df <- df[c(1:3)]
 # create a corups from page
 docs <- Corpus(VectorSource(df))
 
@@ -81,7 +51,18 @@ docs <- tm_map(docs, removeNumbers)
 docs <- tm_map(docs, removeWords, stopwords("english"))
 # Remove your own stop word
 # specify your stopwords as a character vector
-docs <- tm_map(docs, removeWords, c("inc", "agile"))
+docs <- tm_map(docs, removeWords, c("inc", "ltd","will",
+                                    "\u0085ç\u009bã\u0080\u0082",
+                                    "â\u0080\u0093"
+                                    #"team","people","process","working",
+                                    #"years",
+                                    #"business","projects",
+                                    #"agile", "manifesto", 
+                                    "http", 
+                                    #"principles", "development",
+                                    "software", "work", "project", "way", "support",
+                                    #"can","just","get",
+                                    "true","value","believe"))
 # Remove punctuations
 docs <- tm_map(docs, removePunctuation)
 # Eliminate extra white spaces
@@ -89,13 +70,35 @@ docs <- tm_map(docs, stripWhitespace)
 # Text stemming
 #docs <- tm_map(docs, stemDocument)
 inspect(docs)
+saveRDS(dtm,"../data/docs.rds")
 
 dtm <- TermDocumentMatrix(docs)
+saveRDS(dtm,"../data/dtm.rds")
+
 m <- as.matrix(dtm)
 v <- sort(rowSums(m),decreasing=TRUE)
 d <- data.frame(word = names(v),freq=v)
-head(d, 1000)
 
+#write.csv(d, file = "../data/wordfreqs.csv")
+
+# This takes awhile
+#BigramTokenizer <- function(x) NGramTokenizer(x, Weka_control(min = 2, max = 5))
+
+#btm <- TermDocumentMatrix(docs, control = list(tokenize = BigramTokenizer))
+#m <- as.matrix(btm)
+#v <- sort(rowSums(m),decreasing=TRUE)
+#d <- data.frame(word = names(v),freq=v)
+#saveRDS(d,"../data/5grams.rds")
+#head(d)
+
+# find associated terms
+assoc <- findAssocs(dtm, terms = "adventureland", corlimit = 0.3)
+assoc <- as.data.frame(assoc)
+
+set.seed(1234)
+
+
+stop()
 set.seed(1234)
 wordcloud(words = d$word, freq = d$freq, min.freq = 1,
           max.words=200, random.order=FALSE, rot.per=0.35,
