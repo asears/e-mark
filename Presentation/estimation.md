@@ -128,6 +128,7 @@ Estimating Effort
 
 * Thrown (Five Fingers)  
     + 1, 2, 3, 4, 5
+
 ***
 ![shirts](http://agileupgrade.com/wp-content/uploads/2015/02/T-shirt-size-point-ratio.png)
 
@@ -165,21 +166,19 @@ Estimating Business Value
 
 Gamifying Estimates with Planning Poker
 ========================================================
-1. Start an Estimation Session
-2. Choose an Iteration
-3. Select the first PBI
-4. Team discusses PBI, ensures Definition of Ready
+1. Start an Estimation Session for a Backlog or Iteration
+2. Team discusses each PBI, ensures Definition of Ready
     + Description  
     + Acceptance Criteria  
     + Enough information to task it   
-5. For safety and accountability, all team members estimate together
-    + Reduce influences on estimates
-6. Review the estimates  
+3. For safety and accountability, all team members estimate together
+    + Don't show your hand
+    + Reduces influences on estimates
+4. Review the estimates  
     + Elaborate items if estimates differ greatly  
     + Discuss and learn other team members activities
-    + Identify potential blockers
-7. Commit consensus estimate
-8. Revisit estimates at end of sprint
+    + Identify potential blockers and risks
+5. Commit consensus estimate
 
 
 RMarkdown Presentation Tools
