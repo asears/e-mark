@@ -1,30 +1,24 @@
 Gamifying Agile Estimation
 ========================================================
-# YAML Header
 title: "Estimation and Planning Poker"
 author: Andrew Sears, Senior Solutions Consultant, T4G Limited
-date: February 27, 2016
+date: February 27, 2017
 autosize: true
-
-width: 1024
-height: 768
+css:styles/estimation.css
 font-import: http://fonts.googleapis.com/css?family=Risque
 font-family: 'Helvetica'
 
 
 A few of my agile influences
 ========================================================
-
 Gino Marckx, Agile Trainer, started doing agile in 2002
+
 ![Gino](https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/5/005/020/2a0/1787607.jpg)
 
-*"I have trained over 1,000 teams, and only 2 have succeeded in the marshmallow challenge."*  
+*"I have trained over 1,000 teams, and only 2 have succeeded in the [marshmallow challenge](http://www.tomwujec.com/design-projects/marshmallow-challenge/)."*  
 
 *"Agile is just common sense."*
 
-
-Ken Schwaber, co-creator of Scrum in 1995  
-![Ken](http://www.azquotes.com/picture-quotes/quote-scrum-is-like-your-mother-in-law-it-points-out-all-your-faults-ken-schwaber-142-83-07.jpg)
 ***
 Michael Sahota, founder, Toronto Agile Software Development Community  
 ![Michael](http://www.torontoagilecommunity.org/download/attachments/13107247/2014%20Michael%20Profile-300pix.JPG?version=1&modificationDate=1412890237293&api=v2&effects=border-simple,blur-border)
@@ -32,10 +26,20 @@ Michael Sahota, founder, Toronto Agile Software Development Community
 *"All of us need to work together to support you getting what you want."*
 
 
-Dr. Jeff Sutherland, co-creator of Scrum in 1995  
+
+Agile Influencers
+========================================================
+Dr. Jeff Sutherland, co-creator of Scrum 
+
 ![Jeff](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Jeff_Sutherland.JPG/200px-Jeff_Sutherland.JPG)
 
 *"Embrace the unknown! That's where learning lies! If you're too afraid to learn, you will never get any better."*
+***
+Ken Schwaber, co-creator of Scrum
+
+![Ken](http://www.scrumguides.org/images/ken_schwaber.png)
+
+*“Those who play games and keep practicing may become very good at playing the games.”*
 
 
 What's a Backlog?
@@ -43,8 +47,8 @@ What's a Backlog?
 type: prompt
 incremental: true
 
+* An ordered, prioritized list of value-adding product backlog items (PBIs)
 * Work to be completed, what will be delivered
-* An ordered, prioritized list of product backlog items (PBIs)
 * Most valuable *customer* items will be on top
 
 
@@ -53,37 +57,36 @@ What's a Product Backlog Item?
 type: alert
 incremental: true
 
-* Ordered list of work that delivers value to a product
-* Lives under a Feature that lives under an Epic
-* Tells a preferably small story about a feature
-* Contains child tasks and sometimes bugs 
+* A child of a Feature that lives under an Epic umbrella
+* Use case, epic, User Story, bug, chore, group of preferably small tasks
+* When it enters the Backlog, it may be large, risky, ugly and unmanageable
+* Split smelly, unmanageable and risky PBIs up to reduce risk and improve estimations  
+* When it is committed to a sprint iteration it should be tidy, well-defined and manageable
+
+<center>Definition of Ready: Described, Business Valued, Estimated, Ordered</center>
 
 
-Estimation Exercises
+What's an Estimate?
 ========================================================
-* Estimate Product Backlog Items (PBIs)
-** Remember, these are estimates
-** Story Point 
-** Entire team estimates each PBI
+* The relative effort or cost it will take to complete the PBI 
+* Effort to get to a team's Definition of Done within the sprint
+* As the unknowns and risks creep in, your estimates will be higher
+* Estimate are based on instinct, past experiences and perhaps numerology
+* Use Planning Poker to reduce outside influences on estimates
 
-* Use Planning Poker
-** Reduces outside influences on estimates
+<center><img src="http://astronlogia.com/wp-content/uploads/2009/01/Numerology-of-India.jpg" alt="numerology" width="25%" height="25%"></center>
+*<center>Sometimes it can take days to get four hours of work done.</center>*
+*<center>80% of effects come from 20% of causes and 80% of results come from 20% of effort.</center>*
 
 
 Fibonacci Sequence
 ========================================================
-The Fibonacci Sequence is the series of numbers:
+class: small-code
 
-1, 1, 2, 3, 5, 8, 13, 21, 34, .
-
+The Fibonacci Sequence is the series of numbers.
 The next number is found by adding up the two numbers before it.
 
-The 2 is found by adding the two numbers before it (1+1). Similarly, the 3 is found by adding the two numbers before it (1+2).
 
-[Spiral Graph Creation](https://rpubs.com/hchan88888/99118)
-
-Fibonacci Sequence
-========================================================
 
 ```r
 > library(UsingR)
@@ -103,6 +106,8 @@ Fibonacci Sequence
 
 ![plot of chunk unnamed-chunk-1](estimation-figure/unnamed-chunk-1-1.png)
 
+[Spiral Graph Creation](https://rpubs.com/hchan88888/99118)
+
 
 Estimating Effort
 ========================================================
@@ -112,21 +117,34 @@ Estimating Effort
 
 * Fibonacci Extended 
     + 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144
-
+  
 * **Fibonacci Original**
     + 1, 2, 3, 5, 8, 13, 20, 40, 100  
 *Recommended by Ken Schwaber, father of scrum*
-
+  
 * **Doubling**
     + 1, 2, 4, 8, 16, 32, 64  
 *Recommended for Business Value Estimation*
 
-* Thrown  
+* Thrown (Five Fingers)  
     + 1, 2, 3, 4, 5
-
-![Coffee](https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRqUm3mvrF3uDIzZRJ338FKs4iG-8sbatxJA91RFuDNfuEWbv43kqoOsgI)  <large>&infin; </large>
-
+***
 ![shirts](http://agileupgrade.com/wp-content/uploads/2015/02/T-shirt-size-point-ratio.png)
+
+Other valid answers
+========================================================
+<img src="https://c1.staticflickr.com/6/5217/5471047557_4dc13f5376.jpg" alt="unsure" width="20%" height="20%">
+
+*"I have absolutely no idea whatsoever."
+
+![Infinity](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Infinite.svg/200px-Infinite.svg.png)
+
+*"That should take me about 725 years to complete."
+
+<img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRqUm3mvrF3uDIzZRJ338FKs4iG-8sbatxJA91RFuDNfuEWbv43kqoOsgI" alt="timeout">
+
+*"Let's discuss this one over a drink."
+
 
 Estimating Business Value
 ========================================================
@@ -137,75 +155,74 @@ Estimating Business Value
 
 * Prioritize The Backlog by ROI    
 
-*$ROI  = \frac{Business Value}{Effort}$*
+
+<font size="48px">
+*$\LARGE ROI  = \frac{Business Value}{Effort}$* 
+</font> 
 
 
 
 
 Gamifying Estimates with Planning Poker
 ========================================================
-1. Create an Estimation Session
+1. Start an Estimation Session
 2. Choose an Iteration
-3. Share the link
-4. Leader picks a PBI
-5. Team discusses PBI, ensures completeness
+3. Select the first PBI
+4. Team discusses PBI, ensures Definition of Ready
     + Description  
     + Acceptance Criteria  
-    + Enough information to task it out  
-
-6. Everyone submit their estimates at the same time
+    + Enough information to task it   
+5. For safety and accountability, all team members estimate together
     + Reduce influences on estimates
-7. Review the estimates  
+6. Review the estimates  
     + Elaborate items if estimates differ greatly  
     + Discuss and learn other team members activities
     + Identify potential blockers
-9. Commit consensus estimate
-***
-![Keep Calm and Carry On](http://eskipaper.com/images/keep-calm-and-carry-on-9.jpg)
+7. Commit consensus estimate
+8. Revisit estimates at end of sprint
 
 
-Cleaning up Product Backlog Items
+RMarkdown Presentation Tools
 ========================================================
 
-* Don't overthink estimates
+In the course of this presentation, I found some limitations with RStudio's Presentation format around sizing slides and working with a different markdown format.  
 
-* Elaborate on detail and acceptance criteria
-
-* Split Smelly, Stenchy PBIs into smaller PBIs
-
-* Task out PBIs
-
-
-Gamification Techniques
-========================================================
-LEGO(r) SERIOUS PLAY(r)
-https://www.lego.com/en-us/seriousplay 
-
-
-Other RMarkdown Presentation Tools
-========================================================
+Javascript-based presentation frameworks play better with standard markdown.
 
 * revealjs
 * ioslides
 * slidy
 * beamer
-***
+
 ```
 library(devtools)
 install_github('slidify','ramnathv')
 install_github('slidifyLibraries','ramnathv') 
 library('slidify')
-author('slidifyDemo')
+author('estimation')
 ```
 
 Resources
 ========================================================
-[RStudio Cheat Sheets](https://www.rstudio.com/resources/cheatsheets/)
+[Arguments Against Estimation](https://pragprog.com/magazines/2013-02/estimation-is-evil)
+
+[LEGO&reg; SERIOUS PLAY&reg;](https://www.lego.com/en-us/seriousplay)
+
+[To Re-Estimate or Not, That is the Question](https://www.mountaingoatsoftware.com/blog/to-re-estimate-or-not-that-is-the-question)
+
+[Scrum at 21](https://kenschwaber.wordpress.com/2017/01/12/scrum-21/)
 
 [SSW - Do you estimate all tasks at the start of the sprint?](https://rules.ssw.com.au/do-you-estimate-all-tasks-at-the-start-of-the-sprint)
 
 [SSW - Do you know how to size user stories effectively?](https://rules.ssw.com.au/estimating-do-you-know-how-to-size-user-stories-effectively)
 
 [SSW - Do you estimate business value?](https://rules.ssw.com.au/do-you-estimate-business-value)
+
+[RStudio Cheat Sheets](https://www.rstudio.com/resources/cheatsheets/)
+
 [Authoring R Presentations](https://support.rstudio.com/hc/en-us/articles/200486468-Authoring-R-Presentations)
+
+[Algorithmic optimization method for effort estimation](https://link.springer.com/article/10.1134/S0361768816030087)
+
+
 
