@@ -11,16 +11,16 @@ font-family: 'Helvetica'
 
 A few of my agile influences
 ========================================================
-Gino Marckx, Agile Trainer, started doing agile in 2002
+Gino Marckx, Agile Trainer, co-founder, Toronto Agile Software Development Community
 
 ![Gino](https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/5/005/020/2a0/1787607.jpg)
 
-*"I have trained over 1,000 teams, and only 2 have succeeded in the [marshmallow challenge](http://www.tomwujec.com/design-projects/marshmallow-challenge/)."*  
+*"I have facilitated collaborative origami for over 1,000 pairs and only 2 have succeeded in completing it back to back."*  
 
-*"Agile is just common sense."*
+*"Agile is just common sense brought back to software engineering."*
 
 ***
-Michael Sahota, founder, Toronto Agile Software Development Community  
+Michael Sahota, co-founder, Toronto Agile Software Development Community  
 ![Michael](http://www.torontoagilecommunity.org/download/attachments/13107247/2014%20Michael%20Profile-300pix.JPG?version=1&modificationDate=1412890237293&api=v2&effects=border-simple,blur-border)
 
 *"All of us need to work together to support you getting what you want."*
@@ -136,11 +136,11 @@ Other valid answers
 ========================================================
 <img src="https://c1.staticflickr.com/6/5217/5471047557_4dc13f5376.jpg" alt="unsure" width="20%" height="20%">
 
-*"I have absolutely no idea whatsoever."
+*"I have absolutely no idea whatsoever.  I have questions about this."
 
 ![Infinity](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Infinite.svg/200px-Infinite.svg.png)
 
-*"That should take me about 725 years to complete."
+*"The effort for this task is infinite."
 
 <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRqUm3mvrF3uDIzZRJ338FKs4iG-8sbatxJA91RFuDNfuEWbv43kqoOsgI" alt="timeout">
 
