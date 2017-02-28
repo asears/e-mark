@@ -15,6 +15,18 @@ This is a presentation on Gamifying Agile Estimation practices using RStudio's p
 
 *"gamification is exciting because it promises to make the hard stuff in life fun"*
 
+This repository also contains the following R Scripts
+
+|Script|Description|
+|---|---|
+|DownloadSigs.R|Download signatories pages to /data/ folder in html format|
+|ConvertSigs.R|Reads signatories pages from /data html files, adds metadata and saves /data/sigs.RDS|
+|AnalyzeSigs.R|Document Term Frequency and Association Analysis|
+|LoadSigs.R|Load signatories RDS file|
+|PlotMap.R|Future mapping exercise|
+|RandomSigs.R|Random blat of signatories and their comments|
+|WebService.R|Plumber web service against RandomSigs.R (http://localhost:8000/agilefortune)|
+
 Best viewed with<br>
 <img src="https://www.rstudio.com/wp-content/uploads/2014/07/RStudio-Logo-Blue-Gradient.png" alt="alt text" width="128" height="64">
 
