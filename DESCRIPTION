@@ -2,10 +2,9 @@ Package: emark
 Type: Package
 Title: e-mark Agile Estimation Presentation
 Version: 0.1
-Authors@R: c(
-    person("Andrew", "Sears", email = "andrewjsears@thegmailaddress", role = "aut"),
-    )
-Maintainer: Andrew Sears <andrewjsears@thegmailaddress>
+Authors@R: c(person("Andrew", "Sears", email = "andrew.sears@analyticsdream.com", role = c("aut","cre"))
+	    )
+Maintainer: Andrew Sears <andrew.sears@analyticsdream.com>
 URL: https://github.com/asears/e-mark
 BugReports: https://github.com/asears/e-mark/issues
 Description: Analyzing the Agile Manifesto Signatories
@@ -24,7 +23,6 @@ Suggests:
     stringr,
     rvest,
     roxygen2
-VignetteBuilder: knitr
 Collate:
     'LoadSigs.R'
     'DownloadSigs.R'
