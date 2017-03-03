@@ -1,2 +1,36 @@
-Package: e-mark
+Package: emark
+Type: Package
+Title: e-mark Agile Estimation Presentation
 Version: 0.1
+Authors@R: c(
+    person("Andrew", "Sears", email = "andrewjsears@thegmailaddress", role = "aut"),
+    )
+Maintainer: Andrew Sears <andrewjsears@thegmailaddress>
+URL: https://github.com/asears/e-mark
+BugReports: https://github.com/asears/e-mark/issues
+Description: Analyzing the Agile Manifesto Signatories
+Imports:
+    magrittr,
+    lazyeval
+License: MIT + file LICENSE
+Suggests:
+    testthat,
+    knitr,
+    rmarkdown,
+    dplyr,
+    ggplot2,
+    lintr,
+    Hmisc,
+    stringr,
+    rvest,
+    roxygen2
+VignetteBuilder: knitr
+Collate:
+    'LoadSigs.R'
+    'DownloadSigs.R'
+    'RandomSigs.R'
+    'WebService.R'
+    'ConsumeService.R'
+    'AnalyzeSigs.R'
+    'Sentiment.R'
+    'Sentiment.R'
